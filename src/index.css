@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.card-container {
+  perspective: 1500px; /* Adjust perspective to make the 3D effect stronger or weaker */
+}
+
+.card {
+  width: 550px; /* Adjust size as needed */
+  height: 550px; /* Adjust size as needed */
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+  position: relative;
+  transform: rotateX(var(--x-rotation, 0deg)) rotateY(var(--y-rotation, 0deg));
+}
+
+.text-slider {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  animation: slide 1.5s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+
